@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap">
+    <title>Document</title>
+    <style>
+        body{
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 130%;
+            display: flex;
+            color: #fff;
+        }
+        .bg-img{
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            filter: brightness(.9);
+        }
+        .container{
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        h1{
+            font-family: 'Press Start 2P';
+            font-size: 40px;
+        }
+        p{
+            font-family: 'Press Start 2P';
+            font-size: 10px5
+        }
+        .list{
+            display: flex;
+            margin-top: 30px;
+            gap: 100px;
+        }
+        .list-1 {
+            font-family: 'Press Start 2P';
+            padding: 20px;
+            border: 10px solid #fff;
+            border-radius: 20px;
+            transition: .3s ease-in;
+        }
+        .list-1:hover{
+            transform: scale(1.2);
+            box-shadow: 0px -25px 20px -20px #fff, 
+                0px 25px 20px -20px #fff,
+                25px 0px 20px -20px #fff,
+                -25px 0px 20px -20px #fff;
+        }
+        .list-1 button{
+            font-family: 'Press Start 2P';
+            text-decoration: none;
+            color: #fff;
+            font-size: 15px;
+            background-color: transparent;
+            border: 0px;
+        }
+        iframe{
+            margin-top: 30px;
+            width: 1000px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <img src="ArtStation - Explore.gif" alt="" class="bg-img">
+    <div class="container">
+        <h1>Let's Play a Game!</h1>
+        <p>Choose the game that you want</p>
+        <div class="list">
+            <div class="list-1" onmouseover="behaviorIn()" onmouseout="behaviorOut()">
+                <button class="guessnumber" onclick="setGN()">Guess The Number!</button>
+            </div>
+            <div class="list-1" onmouseover="behaviorIn()" onmouseout="behaviorOut()">
+                <button class="mowin" onclick="setMW()">Modal Window</button>
+            </div>
+            <div class="list-1" onmouseover="behaviorIn()" onmouseout="behaviorOut()">
+                <button class="rodi" onclick="setRD()">Rolling Dice!</button>
+            </div>
+        </div>
+        <div>
+            <iframe id="frame" src="" frameborder="5"></iframe>
+        </div>
+    </div>
+    <script>
+        // var list1 = document.getElementsByClassName("list-1");
+        var background = document.querySelector(".bg-img");
+
+        function behaviorIn(){
+            background.style.filter ="brightness(0.5)"
+            background.style.transition = "0.3s";
+        }
+        function behaviorOut(){
+            background.style.filter ="brightness(0.9)"
+            background.style.transition = "0.3s";
+        }
+
+        var guess = document.getElementsByClassName('guessnumber');
+        var mowin = document.getElementsByClassName('mowin');
+        var rodi = document.getElementsByClassName('rodi');
+        var frame = document.getElementById('frame')
+
+        function setGN(){
+            frame.src = 'pabwe-praktikum4a-11s21003/assets/index.html';
+        }
+        function setMW(){
+            frame.src = 'pabwe-praktikum4b-11s21003/assets/index.html';
+        }
+        function setRD(){
+            frame.src = 'pabwe-praktikum4c-11s21003/assets/index.html';
+        }
+    </script>
+</body>
+</html>
